@@ -712,7 +712,7 @@ const educationData = [
                 darkMode ? "text-gray-300" : "text-black"
               }`}
             >
-              I am a creative Social Media Graphic Designer and Content Creator with hands-on experience in designing engaging social media posts, campaign creatives, promotional content, and AI-powered videos[cite: 1]. I focus on visual storytelling, brand consistency, and modern design trends while leveraging tools like Canva, Figma, CapCut, and Adobe Photoshop.
+              I am a creative Social Media Graphic Designer and Content Creator with hands-on experience in designing engaging social media posts, campaign creatives, promotional content, and AI-powered videos. I focus on visual storytelling, brand consistency, and modern design trends while leveraging tools like Canva, Figma, CapCut, and Adobe Photoshop.
             </p>
 
             <p
