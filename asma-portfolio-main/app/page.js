@@ -122,65 +122,60 @@ function MainPage() {
     {
       title: "Canva",
       level: "Advanced",
-      darkLogo: "/images/canva.png",
-      lightLogo: "/images/canva1.png",
+      darkLogo: "/images/canva1.png",
+      lightLogo: "/images/canva.png",
     },
     {
       title: "Adobe Photoshop",
-      level: "Advanced",
-      darkLogo: "/images/photoshop.png",
-      lightLogo: "/images/photoshop1.png",
+      level: "Intermediate",
+      darkLogo: "/images/photoshop1.png",
+      lightLogo: "/images/photoshop.png",
     },
     {
       title: "Figma",
-      level: "Intermediate",
-      darkLogo: "/images/figma.png",
-      lightLogo: "/images/figma1.png",
+      level: "Advanced",
+      darkLogo: "/images/figma1.png",
+      lightLogo: "/images/figma.png",
     },
     {
       title: "Visual Storytelling",
       level: "Advanced",
-      darkLogo: "/images/storytelling.png",
-      lightLogo: "/images/storytelling1.png",
+      darkLogo: "/images/storytelling1.png",
+      lightLogo: "/images/storytelling.png",
     },
     {
       title: "Campaign Creatives",
       level: "Advanced",
-      darkLogo: "/images/campaign.png",
-      lightLogo: "/images/campaign1.png",
+      darkLogo: "/images/campaign1.png",
+      lightLogo: "/images/campaign.png",
     },
-    {
-      title: "Brand Consistency",
-      level: "Advanced",
-      darkLogo: "/images/brand.png",
-      lightLogo: "/images/brand1.png",
-    },
+  
   ];
 
   const aiVideoSkills = [
     {
       title: "CapCut",
       level: "Advanced",
-      darkLogo: "/images/capcut.png",
-      lightLogo: "/images/capcut1.png",
+      darkLogo: "/images/capcut1.png",
+      lightLogo: "/images/capcut.png",
     },
     {
       title: "Adobe Premiere Pro",
       level: "Intermediate",
-      darkLogo: "/images/premiere.png",
-      lightLogo: "/images/premiere1.png",
+      darkLogo: "/images/premiere1.png",
+      lightLogo: "/images/premiere.png",
     },
     {
       title: "AI Video Creation",
       level: "Advanced",
-      darkLogo: "/images/aivideo.png",
-      lightLogo: "/images/aivideo1.png",
+      darkLogo: "/images/aivideo1.png",
+      lightLogo: "/images/aivideo.png",
     },
     {
       title: "Gemini & ChatGPT",
       level: "Advanced",
-      darkLogo: "/images/ai-tools.png",
-      lightLogo: "/images/ai-tools1.png",
+      darkLogo: "/images/ai-tools1.png",
+      lightLogo: "/images/ai-tools.png",
     },
     {
       title: "Content Planning",
@@ -770,7 +765,7 @@ const educationData = [
                 darkMode ? "text-gray-300" : "text-gray-700"
               }`}
             >
-              Creative Social Media Graphic Designer and Content Creator with expertise in social media design, campaign creatives, promotional visuals, short-form video editing, and AI-powered tools[cite: 1].
+              Creative Social Media Graphic Designer and Content Creator with expertise in social media design, campaign creatives, promotional visuals, short-form video editing, and AI-powered tools.
             </p>
           </div>
 
