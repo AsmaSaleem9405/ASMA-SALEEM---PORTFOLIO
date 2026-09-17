@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";
@@ -9,44 +9,20 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Briefcase, GraduationCap, CalendarDays } from "lucide-react";
 
-import { usePathname } from "next/navigation";
-
 export default function Page() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [darkMode, setDarkMode] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [showSplash, setShowSplash] = useState(true); // Splash screen state
+  const router = useRouter();
 
+  // Hide splash screen after 2 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 3000);
-
+    }, 4000);
     return () => clearTimeout(timer);
   }, []);
 
-  return <>{showSplash ? <SplashScreen /> : <MainPage />}</>;
-}
-
-/* SPLASH SCREEN */
-function SplashScreen() {
-  return (
-    <div className="flex items-center justify-center h-screen bg-black">
-      <img src="/images/logo1.png" alt="Logo" className="w-24 animate-pulse" />
-    </div>
-  );
-}
-
-/* MAIN PAGE */
-function MainPage() {
-  const [darkMode, setDarkMode] = useState(true);
-  const [open, setOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const router = useRouter();
-  const [active, setActive] = useState("frontend");
-
-  const pathname = usePathname();
-  const isActive = pathname === "/";
-  {
-    /* clickable navbar*/
-  }
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -54,9 +30,6 @@ function MainPage() {
     }
   };
 
-  {
-    /*contact us*/
-  }
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -65,10 +38,8 @@ function MainPage() {
   });
 
   const [loading, setLoading] = useState(false);
-
   const [success, setSuccess] = useState(false);
 
-  // Handle Input Change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -76,7 +47,6 @@ function MainPage() {
     });
   };
 
-  // Handle Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -96,7 +66,6 @@ function MainPage() {
 
       if (data.success) {
         setSuccess(true);
-
         setFormData({
           name: "",
           email: "",
@@ -113,127 +82,46 @@ function MainPage() {
       setLoading(false);
     }
   };
-
-  {
-    /*my skills*/
-  }
-
   const socialMediaSkills = [
-    {
-      title: "Canva",
-      level: "Advanced",
-      darkLogo: "/images/canva1.png",
-      lightLogo: "/images/canva.png",
-    },
-    {
-      title: "Adobe Photoshop",
-      level: "Intermediate",
-      darkLogo: "/images/photoshop1.png",
-      lightLogo: "/images/photoshop.png",
-    },
-    {
-      title: "Figma",
-      level: "Advanced",
-      darkLogo: "/images/figma1.png",
-      lightLogo: "/images/figma.png",
-    },
-    {
-      title: "Visual Storytelling",
-      level: "Advanced",
-      darkLogo: "/images/storytelling1.png",
-      lightLogo: "/images/storytelling.png",
-    },
-    {
-      title: "Campaign Creatives",
-      level: "Advanced",
-      darkLogo: "/images/campaign1.png",
-      lightLogo: "/images/campaign.png",
-    },
-  
+    { title: "Canva", level: "Advanced", darkLogo: "/images/canva1.png", lightLogo: "/images/canva.png" },
+    { title: "Adobe Photoshop", level: "Intermediate", darkLogo: "/images/photoshop1.png", lightLogo: "/images/photoshop.png" },
+    { title: "Figma", level: "Advanced", darkLogo: "/images/figma1.png", lightLogo: "/images/figma.png" },
+    { title: "Visual Storytelling", level: "Advanced", darkLogo: "/images/storytelling1.png", lightLogo: "/images/storytelling.png" },
+    { title: "Campaign Creatives", level: "Advanced", darkLogo: "/images/campaign1.png", lightLogo: "/images/campaign.png" },
   ];
 
   const aiVideoSkills = [
-    {
-      title: "CapCut",
-      level: "Advanced",
-      darkLogo: "/images/capcut1.png",
-      lightLogo: "/images/capcut.png",
-    },
-    {
-      title: "Adobe Premiere Pro",
-      level: "Intermediate",
-      darkLogo: "/images/premiere1.png",
-      lightLogo: "/images/premiere.png",
-    },
-    {
-      title: "AI Video Creation",
-      level: "Advanced",
-      darkLogo: "/images/aivideo1.png",
-      lightLogo: "/images/aivideo.png",
-    },
-    {
-      title: "Gemini & ChatGPT",
-      level: "Advanced",
-      darkLogo: "/images/ai-tools1.png",
-      lightLogo: "/images/ai-tools.png",
-    },
-    {
-      title: "Content Planning",
-      level: "Advanced",
-      darkLogo: "/images/planning.png",
-      lightLogo: "/images/planning1.png",
-    },
+    { title: "CapCut", level: "Advanced", darkLogo: "/images/capcut1.png", lightLogo: "/images/capcut.png" },
+    { title: "Adobe Premiere Pro", level: "Intermediate", darkLogo: "/images/premiere1.png", lightLogo: "/images/premiere.png" },
+    { title: "AI Video Creation", level: "Advanced", darkLogo: "/images/aivideo1.png", lightLogo: "/images/aivideo.png" },
+    { title: "Gemini & ChatGPT", level: "Advanced", darkLogo: "/images/ai-tools1.png", lightLogo: "/images/ai-tools.png" },
+    { title: "Content Planning", level: "Advanced", darkLogo: "/images/planning.png", lightLogo: "/images/planning1.png" },
   ];
 
+  const experienceData = [
+    {
+      year: "Jan 2026 - Present",
+      title: "Social Media Graphic Designer",
+      company: "Lancer Seed",
+      description: "Create social media posts and marketing creatives for seed and agriculture-focused products. Handle content planning, design AI-generated and AI-assisted videos for campaigns, and maintain brand consistency using Canva, CapCut, and Adobe Photoshop."
+    },
+    {
+      year: "Jan 2025 - Present",
+      title: "Social Media Graphic Designer",
+      company: "Evzonetech",
+      description: "Design engaging social media posts, promotional graphics, and campaign creatives. Plan content aligned with visual trends, create AI-powered short-form video content using CapCut, and develop polished assets using Canva and Adobe Photoshop."
+    }
+  ];
 
-const projectsData = [
-  {
-    title: "Evzonetech",
-    image: "/images/ev.png",
-    link: "/projects/evzonetech",
-  },
-  {
-    title: "Lancer Seed",
-    image: "/images/lancer1.png",
-    link: "/projects/lancer-seed",
-  },
-  {
-    title: "Eastern High School",
-    image: "/images/ehs1.png",
-    link: "/projects/eastern-high-school",
-  },
-  {
-    title: "Fashion Bank",
-    image: "/images/fb1.png",
-    link: "/projects/fashion-bank",
-  },
-];
-const experienceData = [
-  {
-    year: "Jan 2026 - Present",
-    title: "Social Media Graphic Designer",
-    company: "Lancer Seed",
-    description: "Create social media posts and marketing creatives for seed and agriculture-focused products. Handle content planning, design AI-generated and AI-assisted videos for campaigns, and maintain brand consistency using Canva, CapCut, and Adobe Photoshop."
-  },
-  {
-    year: "Jan 2025 - Present",
-    title: "Social Media Graphic Designer",
-    company: "Evzonetech",
-    description: "Design engaging social media posts, promotional graphics, and campaign creatives. Plan content aligned with visual trends, create AI-powered short-form video content using CapCut, and develop polished assets using Canva and Adobe Photoshop."
-  }
-];
+  const educationData = [
+    {
+      year: "Sep 2021 - May 2025",
+      title: "BSCS (Bachelor of Science in Computer Science)",
+      company: "University of Agriculture",
+      description: "Completed a comprehensive program building a strong blend of creative digital media skills and technical computer science foundations."
+    }
+  ];
 
-const educationData = [
-  {
-    year: "Sep 2021 - May 2025",
-    title: "BSCS (Bachelor of Science in Computer Science)",
-    company: "University of Agriculture",
-    description: "Completed a comprehensive program building a strong blend of creative digital media skills and technical computer science foundations."
-  }
-];
-  {
-    /*  navbar activation */
-  }
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
@@ -257,7 +145,9 @@ const educationData = [
 
     return () => observer.disconnect();
   }, []);
+
   return (
+    
     <>
       <div
         className="min-h-screen bg-cover bg-center transition-all duration-500"
@@ -267,240 +157,115 @@ const educationData = [
             : "url('/images/bg-light.png')",
         }}
       >
-        {/* Overlay */}
-        <div
-          className={`min-h-screen ${darkMode ? "bg-black/40 text-white" : "text-black"}`}
-        >
-          {/*navbar */}
-          <>
-            <nav
-              className="flex items-center  justify-between
-    px-4 sm:px-6 md:px-16
-    py-3 md:py-2
-    bg-blue/40 backdrop-blur-md shadow-sm
-    fixed top-0 left-0 w-full z-50"
-            >
-              {/* Left: Logo */}
-              <Link href="#home">
-                <>
-                  <img
-                    src="/images/logo1.png"
-                    alt="Logo Light"
-                    className="h-12 w-auto block dark:hidden"
-                  />
-                  <img
-                    src="/images/logo1.png"
-                    alt="Logo Dark"
-                    className="h-12 w-auto hidden dark:block"
-                  />
-                </>
-              </Link>
+        <div className={`min-h-screen ${darkMode ? "bg-black/40 text-white" : "text-black"}`}>
+          {/* Navbar */}
+          <nav
+            className="flex items-center justify-between px-4 sm:px-6 md:px-16 py-3 md:py-2 bg-blue/40 backdrop-blur-md shadow-sm fixed top-0 left-0 w-full z-50"
+          >
+            <Link href="#home">
+              <img src="/images/logo1.png" alt="Logo" className="h-12 w-auto" />
+            </Link>
 
-              <div className="flex-1"></div>
+            <div className="flex-1"></div>
 
-              {/* Right side */}
-              <div className="flex items-center gap-6 font-bold">
-                {/* Toggle */}
-                <button
-                  onClick={() => setDarkMode(!darkMode)}
-                  className="text-xl"
-                >
-                  {darkMode ? "☀️" : "🌙"}
-                </button>
+            <div className="flex items-center gap-6 font-bold">
+              <button onClick={() => setDarkMode(!darkMode)} className="text-xl">
+                {darkMode ? "☀️" : "🌙"}
+              </button>
 
-                {/* Mobile Menu Button */}
-                <button
-                  className="md:hidden text-2xl"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                >
-                  {menuOpen ? "✖" : "☰"}
-                </button>
+              <button className="md:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
+                {menuOpen ? "✖" : "☰"}
+              </button>
 
-                {/* Desktop Nav */}
-                <ul className="hidden  md:flex text-sm gap-8 ">
-                  <li
-                    onClick={() => scrollToSection("home")}
-                    className={`cursor-pointer transition-all duration-300 ${
-                      activeSection === "home"
-                        ? "text-purple-800  font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] scale-110"
-                        : "hover:text-purple-800 dark:hover:text-purple-800"
-                    }`}
-                  >
-                    Home
-                  </li>
+              <ul className="hidden md:flex text-sm gap-8">
+                <li onClick={() => scrollToSection("home")} className={`cursor-pointer transition-all duration-300 ${activeSection === "home" ? "text-purple-800 font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] scale-110" : "hover:text-purple-800"}`}>
+                  Home
+                </li>
+                <li onClick={() => scrollToSection("about")} className={`cursor-pointer transition-colors ${activeSection === "about" ? "text-purple-800 font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] scale-110" : "hover:text-purple-800"}`}>
+                  About
+                </li>
+                <li onClick={() => scrollToSection("skills")} className={`cursor-pointer transition-colors ${activeSection === "skills" ? "text-purple-800 font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] scale-110" : "hover:text-purple-800"}`}>
+                  Skills
+                </li>
+                <li onClick={() => scrollToSection("projects")} className={`cursor-pointer transition-colors ${activeSection === "projects" ? "text-purple-800 font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] scale-110" : "hover:text-purple-800"}`}>
+                  Projects
+                </li>
+                <li onClick={() => scrollToSection("experience")} className={`cursor-pointer transition-colors ${activeSection === "experience" ? "text-purple-800 font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] scale-110" : "hover:text-purple-800"}`}>
+                  Experience
+                </li>
+              </ul>
 
-                  <li
-                    onClick={() => scrollToSection("about")}
-                    className={`cursor-pointer transition-colors ${
-                      activeSection === "about"
-                        ? "text-purple-800  font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] scale-110"
-                        : "hover:text-purple-800 dark:hover:text-purple-800"
-                    }`}
-                  >
-                    About
-                  </li>
-                  <li
-                    onClick={() => scrollToSection("skills")}
-                    className={`cursor-pointer transition-colors ${
-                      activeSection === "skills"
-                        ? "text-purple-800  font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] scale-110"
-                        : "hover:text-purple-800 dark:hover:text-purple-800"
-                    }`}
-                  >
-                    Skills
-                  </li>
-                  <li
-                    onClick={() => scrollToSection("projects")}
-                    className={`cursor-pointer transition-colors ${
-                      activeSection === "projects"
-                        ? "text-purple-800  font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] scale-110"
-                        : "hover:text-purple-800 dark:hover:text-purple-800"
-                    }`}
-                  >
-                    Projects
-                  </li>
-
-                  <li
-                    onClick={() => scrollToSection("experience")}
-                    className={`cursor-pointer transition-colors ${
-                      activeSection === "experience"
-                        ? "text-purple-800  font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] scale-110"
-                        : "hover:text-purple-800 dark:hover:text-purple-800"
-                    }`}
-                  >
-                    Experience
-                  </li>
-                </ul>
-
-                {/* Button */}
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="hidden md:block bg-purple-600 px-4 py-2 rounded-full text-sm hover:bg-purple-700 text-white shadow-[0_0_15px_rgba(168,85,247,0.7)] animate-pulse hover:shadow-[0_0_25px_rgba(168,85,247,1)] transition-all duration-300"
-                >
-                  Contact Us
-                </button>
-              </div>
-            </nav>
-
-            {/* Mobile Menu */}
-            {menuOpen && (
-              <div
-                className={`md:hidden fixed inset-0 z-50 flex flex-col ${
-                  darkMode ? "bg-gray-900 text-white" : "bg-white text-black"
-                }`}
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="hidden md:block bg-purple-600 px-4 py-2 rounded-full text-sm hover:bg-purple-700 text-white shadow-[0_0_15px_rgba(168,85,247,0.7)] animate-pulse transition-all duration-300 cursor-pointer"
               >
-                <div className="flex items-center justify-between px-6 py-4">
-                 <div
-  onClick={() => {
-    setMenuOpen(false);
+                Contact Us
+              </button>
+            </div>
+          </nav>
 
-    setTimeout(() => {
-      const section = document.getElementById("/#home");
-
-      if (section) {
-        section.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
-    }, 100);
-  }}
-  className="cursor-pointer"
->
-                  
-
-                    <img
-                      src="/images/logo1.png"
-                      alt="Logo Dark"
-                      className="h-12 w-auto hidden dark:block"
-                    />
-                  </div>
-
-                  <div className="flex items-center gap-4 z-20">
-                    <button
-                      onClick={() => setDarkMode(!darkMode)}
-                      className="text-xl cursor-pointer"
-                    >
-                      {darkMode ? "☀️" : "🌙"}
-                    </button>
-
-                    <button
-                      className="text-2xl cursor-pointer"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      ✖
-                    </button>
-                  </div>
+          {/* Mobile Menu */}
+          {menuOpen && (
+            <div className={`md:hidden fixed inset-0 z-50 flex flex-col ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
+              <div className="flex items-center justify-between px-6 py-4">
+                <div onClick={() => { setMenuOpen(false); scrollToSection("home"); }} className="cursor-pointer">
+                  <img src="/images/logo1.png" alt="Logo" className="h-12 w-auto" />
                 </div>
 
-                <ul className="flex flex-col flex-1 justify-center items-center gap-6 text-lg font-bold text-center -mt-50">
-                  <li
-                    className="cursor-pointer"
-                    onClick={() => {
-                      scrollToSection("home");
-                      setMenuOpen(false);
-                    }}
-                  >
-                    Home
-                  </li>
-
-                  <li
-                    className="cursor-pointer"
-                    onClick={() => {
-                      scrollToSection("about");
-                      setMenuOpen(false);
-                    }}
-                  >
-                    About
-                  </li>
-
-                  <li
-                    className="cursor-pointer"
-                    onClick={() => {
-                      scrollToSection("skills");
-                      setMenuOpen(false);
-                    }}
-                  >
-                    Skills
-                  </li>
-
-                  <li
-                    className="cursor-pointer"
-                    onClick={() => {
-                      scrollToSection("projects");
-                      setMenuOpen(false);
-                    }}
-                  >
-                    Projects
-                  </li>
-
-                  <li
-                    className="cursor-pointer"
-                    onClick={() => {
-                      scrollToSection("experience");
-                      setMenuOpen(false);
-                    }}
-                  >
-                    Experience
-                  </li>
-
-                  {/* Contact Button (Fixed for mobile) */}
-                  <li
-                    className="cursor-pointer"
-                    onClick={() => {
-                      scrollToSection("contact");
-                      setMenuOpen(false);
-                    }}
-                  >
-                    <span className="bg-purple-600 px-4 py-2 rounded-full text-sm text-white shadow-[0_0_15px_rgba(168,85,247,0.7)] animate-pulse hover:bg-purple-700 hover:shadow-[0_0_25px_rgba(168,85,247,1)] transition-all duration-300">
-                      Contact Us
-                    </span>
-                  </li>
-                </ul>
+                <div className="flex items-center gap-4 z-20">
+                  <button onClick={() => setDarkMode(!darkMode)} className="text-xl cursor-pointer">
+                    {darkMode ? "☀️" : "🌙"}
+                  </button>
+                  <button className="text-2xl cursor-pointer" onClick={() => setMenuOpen(false)}>
+                    ✖
+                  </button>
+                </div>
               </div>
-            )}
-          </>
+
+              <ul className="flex flex-col flex-1 justify-center items-center gap-6 text-lg font-bold text-center">
+                <li className="cursor-pointer" onClick={() => { scrollToSection("home"); setMenuOpen(false); }}>Home</li>
+                <li className="cursor-pointer" onClick={() => { scrollToSection("about"); setMenuOpen(false); }}>About</li>
+                <li className="cursor-pointer" onClick={() => { scrollToSection("skills"); setMenuOpen(false); }}>Skills</li>
+                <li className="cursor-pointer" onClick={() => { scrollToSection("projects"); setMenuOpen(false); }}>Projects</li>
+                <li className="cursor-pointer" onClick={() => { scrollToSection("experience"); setMenuOpen(false); }}>Experience</li>
+                <li className="cursor-pointer pt-4" onClick={() => { scrollToSection("contact"); setMenuOpen(false); }}>
+                  <span className="bg-purple-600 px-4 py-2 rounded-full text-sm text-white shadow-[0_0_15px_rgba(168,85,247,0.7)]">
+                    Contact Us
+                  </span>
+                </li>
+              </ul>
+            </div>
+          )}
+{/* 1. SPLASH SCREEN (Placed at the very top of the return so it shows first) */}
+      <AnimatePresence>
+        {showSplash && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-gray-950"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex flex-col items-center"
+            >
+              <Image
+                src="/images/logo1.png" 
+                alt="Logo"
+                width={120}
+                height={120}
+                priority
+                className="animate-pulse"
+              />
+             
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
           {/* HERO */}
-<section
+         <section
             id="home"
             className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-10 md:py-20"
           >
@@ -729,8 +494,9 @@ const educationData = [
         </motion.div>
       </section>
 
-      {/* skills*/}
-     <section
+
+      {/* Skills */}
+       <section
         id="skills"
         className="w-full px-4 md:px-16 py-16 md:py-24
                  bg-cover bg-top bg-no-repeat"
@@ -864,94 +630,56 @@ const educationData = [
           </div>
         </div>
       </section>
-      {/*projects*/}
 
-      {/* PROJECTS */}
+      {/* Projects */}
+      <section
+        id="projects"
+        className="w-full px-4 md:px-16 py-16 md:py-24 bg-cover bg-top bg-no-repeat scroll-mt-24"
+        style={{
+          backgroundImage: darkMode
+            ? "url('/images/projects-bg.png')"
+            : "url('/images/projects-bg1.png')",
+        }}
+      >
+        <div className="flex flex-col items-center text-center mb-14">
+          <h1 className={`text-4xl md:text-5xl font-bold mb-4 ${darkMode ? "text-white" : "text-black"}`}>
+            My Recent Works
+          </h1>
+          <p className={`text-sm md:text-base max-w-xl ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
+            Explore my professional campaign creatives, promotional posts, and AI-powered video projects. Click any project to view detailed designs and carousels.
+          </p>
+        </div>
 
-      {/* PROJECTS / RECENT WORKS */}
-     <section
-  id="projects"
-  className="w-full px-4 md:px-16 py-16 md:py-24
-       bg-cover bg-top bg-no-repeat
-       scroll-mt-24"
-  style={{
-    backgroundImage: darkMode
-      ? "url('/images/projects-bg.png')"
-      : "url('/images/projects-bg1.png')",
-  }}
->
-  <div className="flex flex-col items-center text-center mb-14">
-    <h1
-      className={`text-4xl md:text-5xl font-bold mb-4 ${
-        darkMode ? "text-white" : "text-black"
-      }`}
-    >
-      My Recent Works
-    </h1>
-    <p
-      className={`text-sm md:text-base max-w-xl ${
-        darkMode ? "text-gray-300" : "text-gray-700"
-      }`}
-    >
-      Explore my professional campaign creatives, promotional posts, and AI-powered video projects. Click any project to view detailed designs and carousels.
-    </p>
-  </div>
-
-  {/* PROJECT GRID (4 Projects) */}
-  <div className="relative max-w-6xl mx-auto w-full">
-    <div className="absolute inset-0 bg-purple-700/20 blur-3xl"></div>
-
-    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8">
-      {[
-        {
-          title: "Evzonetech",
-          image: "/images/ev.png",
-          link: "/projects/evzonetech",
-        },
-        {
-          title: "Lancer Seed",
-          image: "/images/lancer1.png",
-          link: "/projects/lancer-seed",
-        },
-        {
-          title: "Eastern High School",
-          image: "/images/ehs1.png",
-          link: "/projects/eastern-high-school",
-        },
-        {
-          title: "Fashion Bank",
-          image: "/images/fb1.png",
-          link: "/projects/fashion-bank",
-        },
-      ].map((project, index) => (
-        <Link
-          key={index}
-          href={project.link}
-          className="bg-[#0f0f0f] rounded-xl overflow-hidden border border-purple-900/30 hover:scale-[1.02] transition duration-300 block group cursor-pointer"
-        >
-          <div className="overflow-hidden">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-65 object-cover group-hover:scale-110 transition duration-500"
-            />
+        <div className="relative max-w-6xl mx-auto w-full">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { title: "Evzonetech", image: "/images/ev.png", link: "/projects/evzonetech" },
+              { title: "Lancer Seed", image: "/images/lancer1.png", link: "/projects/lancer-seed" },
+              { title: "Eastern High School", image: "/images/ehs1.png", link: "/projects/eastern-high-school" },
+              { title: "Fashion Bank", image: "/images/fb1.png", link: "/projects/fashion-bank" },
+            ].map((project, index) => (
+              <Link
+                key={index}
+                href={project.link}
+                className="bg-[#0f0f0f] rounded-xl overflow-hidden border border-purple-900/30 hover:scale-[1.02] transition duration-300 block group cursor-pointer"
+              >
+                <div className="overflow-hidden">
+                  <img src={project.image} alt={project.title} className="w-full h-65 object-cover group-hover:scale-110 transition duration-500" />
+                </div>
+                <div className="p-5 flex items-center justify-between">
+                  <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                  <span className="text-purple-400 text-sm group-hover:translate-x-1 transition-transform">
+                    View Gallery &rarr;
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <div className="p-5 flex items-center justify-between">
-            <h3 className="text-xl font-semibold text-white">
-              {project.title}
-            </h3>
-            <span className="text-purple-400 text-sm group-hover:translate-x-1 transition-transform">
-              View Gallery &rarr;
-            </span>
-          </div>
-        </Link>
-      ))}
-    </div>
-  </div>
-</section>
-      {/* experience*/}
-    <section
+      {/* Experience */}
+        <section
   id="experience"
   className="w-full py-16 px-4 sm:px-6 lg:px-12 bg-cover bg-top bg-no-repeat relative"
   style={{
@@ -1050,9 +778,8 @@ const educationData = [
   </div>
 </section>
 
-      {/*contact us*/}
-
-      <section
+      {/* Contact Us */}
+     <section
         id="contact"
         className={`relative w-full py-20 px-6 md:px-16 overflow-hidden transition-all duration-500 bg-cover bg-center bg-no-repeat ${
           darkMode ? "bg-black text-white" : "bg-white text-black"
