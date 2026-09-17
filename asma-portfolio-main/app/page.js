@@ -189,28 +189,30 @@ function MainPage() {
       lightLogo: "/images/planning1.png",
     },
   ];
- const projectsData = [
-    {
-      title: "Evzonetech",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-      link: "/projects/evzonetech",
-    },
-    {
-      title: "Lancer Seed",
-      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
-      link: "/projects/lancer-seed",
-    },
-    {
-      title: "Eastern High School",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
-      link: "/projects/eastern-high-school",
-    },
-    {
-      title: "Fashion Bank",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
-      link: "/projects/fashion-bank",
-    },
-  ];
+
+
+const projectsData = [
+  {
+    title: "Evzonetech",
+    image: "/images/ev.png",
+    link: "/projects/evzonetech",
+  },
+  {
+    title: "Lancer Seed",
+    image: "/images/lancer1.png",
+    link: "/projects/lancer-seed",
+  },
+  {
+    title: "Eastern High School",
+    image: "/images/ehs1.png",
+    link: "/projects/eastern-high-school",
+  },
+  {
+    title: "Fashion Bank",
+    image: "/images/fb1.png",
+    link: "/projects/fashion-bank",
+  },
+];
   const experienceData = [
     {
       year: "Aug 2025 - Dec 2025",
@@ -902,87 +904,87 @@ function MainPage() {
       {/* PROJECTS */}
 
       {/* PROJECTS / RECENT WORKS */}
-      <section
-        id="projects"
-        className="w-full px-4 md:px-16 py-16 md:py-24
-             bg-cover bg-top bg-no-repeat
-             scroll-mt-24"
-        style={{
-          backgroundImage: darkMode
-            ? "url('/images/projects-bg.png')"
-            : "url('/images/projects-bg1.png')",
-        }}
-      >
-        <div className="flex flex-col items-center text-center mb-14">
-          <h1
-            className={`text-4xl md:text-5xl font-bold mb-4 ${
-              darkMode ? "text-white" : "text-black"
-            }`}
-          >
-            My Recent Works
-          </h1>
-          <p
-            className={`text-sm md:text-base max-w-xl ${
-              darkMode ? "text-gray-300" : "text-gray-700"
-            }`}
-          >
-            Explore my professional campaign creatives, promotional posts, and AI-powered video projects. Click any project to view detailed designs and carousels.
-          </p>
-        </div>
+     <section
+  id="projects"
+  className="w-full px-4 md:px-16 py-16 md:py-24
+       bg-cover bg-top bg-no-repeat
+       scroll-mt-24"
+  style={{
+    backgroundImage: darkMode
+      ? "url('/images/projects-bg.png')"
+      : "url('/images/projects-bg1.png')",
+  }}
+>
+  <div className="flex flex-col items-center text-center mb-14">
+    <h1
+      className={`text-4xl md:text-5xl font-bold mb-4 ${
+        darkMode ? "text-white" : "text-black"
+      }`}
+    >
+      My Recent Works
+    </h1>
+    <p
+      className={`text-sm md:text-base max-w-xl ${
+        darkMode ? "text-gray-300" : "text-gray-700"
+      }`}
+    >
+      Explore my professional campaign creatives, promotional posts, and AI-powered video projects. Click any project to view detailed designs and carousels.
+    </p>
+  </div>
 
-        {/* PROJECT GRID (4 Projects) */}
-        <div className="relative max-w-6xl mx-auto w-full">
-          <div className="absolute inset-0 bg-purple-700/20 blur-3xl"></div>
+  {/* PROJECT GRID (4 Projects) */}
+  <div className="relative max-w-6xl mx-auto w-full">
+    <div className="absolute inset-0 bg-purple-700/20 blur-3xl"></div>
 
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Evzonetech",
-                image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-                link: "/projects/evzonetech",
-              },
-              {
-                title: "Lancer Seed",
-                image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
-                link: "/projects/lancer-seed",
-              },
-              {
-                title: "Eastern High School",
-                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
-                link: "/projects/eastern-high-school",
-              },
-              {
-                title: "Fashion Bank",
-                image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
-                link: "/projects/fashion-bank",
-              },
-            ].map((project, index) => (
-              <Link
-                key={index}
-                href={project.link}
-                className="bg-[#0f0f0f] rounded-xl overflow-hidden border border-purple-900/30 hover:scale-[1.02] transition duration-300 block group cursor-pointer"
-              >
-                <div className="overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-65 object-cover group-hover:scale-110 transition duration-500"
-                  />
-                </div>
-
-                <div className="p-5 flex items-center justify-between">
-                  <h3 className="text-xl font-semibold text-white">
-                    {project.title}
-                  </h3>
-                  <span className="text-purple-400 text-sm group-hover:translate-x-1 transition-transform">
-                    View Gallery &rarr;
-                  </span>
-                </div>
-              </Link>
-            ))}
+    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8">
+      {[
+        {
+          title: "Evzonetech",
+          image: "/images/ev.png",
+          link: "/projects/evzonetech",
+        },
+        {
+          title: "Lancer Seed",
+          image: "/images/lancer1.png",
+          link: "/projects/lancer-seed",
+        },
+        {
+          title: "Eastern High School",
+          image: "/images/ehs1.png",
+          link: "/projects/eastern-high-school",
+        },
+        {
+          title: "Fashion Bank",
+          image: "/images/fb1.png",
+          link: "/projects/fashion-bank",
+        },
+      ].map((project, index) => (
+        <Link
+          key={index}
+          href={project.link}
+          className="bg-[#0f0f0f] rounded-xl overflow-hidden border border-purple-900/30 hover:scale-[1.02] transition duration-300 block group cursor-pointer"
+        >
+          <div className="overflow-hidden">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-65 object-cover group-hover:scale-110 transition duration-500"
+            />
           </div>
-        </div>
-      </section>
+
+          <div className="p-5 flex items-center justify-between">
+            <h3 className="text-xl font-semibold text-white">
+              {project.title}
+            </h3>
+            <span className="text-purple-400 text-sm group-hover:translate-x-1 transition-transform">
+              View Gallery &rarr;
+            </span>
+          </div>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
       {/* experience*/}
       <section
         id="experience"
