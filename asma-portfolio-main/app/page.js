@@ -213,59 +213,29 @@ const projectsData = [
     link: "/projects/fashion-bank",
   },
 ];
-  const experienceData = [
-    {
-      year: "Aug 2025 - Dec 2025",
-      title: "Frontend Developer",
-      company: "Devisgon, Okara",
-      desc: "Developed responsive and user-friendly websites using Next.js and Tailwind CSS.",
-    },
-    {
-      year: "Jan 2025 - Jul 2025",
-      title: "Junior Business Analyst",
-      company: "Efaida Technologies, Okara",
-      desc: "Worked on requirement gathering, BRD, SRS, FRD, UML diagrams and stakeholder communication.",
-    },
-    {
-      year: "Self Employed",
-      title: "Canva Designer",
-      company: "Freelance",
-      desc: "Created social media posts, portfolio designs, presentations and branding designs using Canva.",
-    },
-    {
-      year: "Final Year Project",
-      title: "UAF Course Allocation System",
-      company: "University Project",
-      desc: "Built a responsive course allocation system using Next.js and Tailwind CSS.",
-    },
-  ];
+const experienceData = [
+  {
+    year: "Jan 2026 - Present",
+    title: "Social Media Graphic Designer",
+    company: "Lancer Seed",
+    description: "Create social media posts and marketing creatives for seed and agriculture-focused products. Handle content planning, design AI-generated and AI-assisted videos for campaigns, and maintain brand consistency using Canva, CapCut, and Adobe Photoshop."
+  },
+  {
+    year: "Jan 2025 - Present",
+    title: "Social Media Graphic Designer",
+    company: "Evzonetech",
+    description: "Design engaging social media posts, promotional graphics, and campaign creatives. Plan content aligned with visual trends, create AI-powered short-form video content using CapCut, and develop polished assets using Canva and Adobe Photoshop."
+  }
+];
 
-  const educationData = [
-    {
-      year: "2021 - 2025",
-      title: "BS Computer Science",
-      company: "University of Agriculture Faisalabad",
-      desc: "CGPA: 3.59 / 4.0",
-    },
-    {
-      year: "Frontend Development",
-      title: "Next.js & Tailwind CSS",
-      company: "Internship & Practical Learning",
-      desc: "Learned responsive web development and reusable UI components.",
-    },
-    {
-      year: "Business Analysis",
-      title: "Documentation & UML",
-      company: "Professional Training",
-      desc: "Worked on BRD, SRS, FRD, RTM and workflow diagrams.",
-    },
-    {
-      year: "Designing",
-      title: "Canva & Creative Design",
-      company: "Self Learning",
-      desc: "Designed creative portfolios, social media posts and presentations.",
-    },
-  ];
+const educationData = [
+  {
+    year: "Sep 2021 - May 2025",
+    title: "BSCS (Bachelor of Science in Computer Science)",
+    company: "University of Agriculture",
+    description: "Completed a comprehensive program building a strong blend of creative digital media skills and technical computer science foundations."
+  }
+];
   {
     /*  navbar activation */
   }
@@ -656,7 +626,7 @@ const projectsData = [
               <div className="absolute -inset-1 rounded-2xl bg-linear-to-r from-blue-500 via-blue-900 to-purple-900 blur-lg opacity-70"></div>
 
               <img
-                src="images/profile.png"
+                src="images/asma2.png"
                 alt="profile"
                 className="relative w-56 md:w-72 lg:w-80 rounded-2xl shadow-lg"
               />
@@ -699,7 +669,7 @@ const projectsData = [
             >
               <div className="rounded-xl overflow-hidden bg-black">
                 <Image
-                  src="/images/profile.png"
+                  src="/images/asma2.png"
                   alt="Profile"
                   width={400}
                   height={500}
@@ -986,147 +956,104 @@ const projectsData = [
   </div>
 </section>
       {/* experience*/}
-      <section
-        id="experience"
-        className="w-full py-16 px-4 sm:px-6 lg:px-12
-             bg-cover bg-top bg-no-repeat relative"
-        style={{
-          backgroundImage: darkMode
-            ? "url('/images/experience-bg.png')"
-            : "url('/images/skills-bg1.png')",
-        }}
-      >
-        {/* Overlay */}
+    <section
+  id="experience"
+  className="w-full py-16 px-4 sm:px-6 lg:px-12 bg-cover bg-top bg-no-repeat relative"
+  style={{
+    backgroundImage: darkMode
+      ? "url('/images/experience-bg.png')"
+      : "url('/images/skills-bg1.png')",
+  }}
+>
+  {/* Main Content */}
+  <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+    
+    {/* Experience Section */}
+    <motion.div
+      initial={{ opacity: 0, x: -40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: false }}
+    >
+      <div className="flex items-center gap-3 mb-8">
+        <Briefcase className="text-purple-500 w-7 h-7" />
+        <h2 className={`text-3xl font-bold ${darkMode ? "text-white" : "text-black"}`}>
+          My Experience
+        </h2>
+      </div>
 
-        {/* Main Content */}
-        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Experience Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: false }}
+      <div className="space-y-5">
+        {experienceData.map((item, index) => (
+          <div
+            key={index}
+            className={`min-h-[170px] flex flex-col justify-center rounded-2xl p-5 border transition-all duration-300 hover:scale-[1.02] shadow-lg ${
+              darkMode
+                ? "bg-[#14081f] border-purple-900/40 hover:border-purple-500"
+                : "bg-white/80 border-gray-300 hover:border-purple-400"
+            }`}
           >
-            <div className="flex items-center gap-3 mb-8">
-              <Briefcase className="text-purple-500 w-7 h-7" />
-
-              {/* TEXT COLOR */}
-              <h2
-                className={`text-3xl font-bold ${
-                  darkMode ? "text-white" : "text-black"
-                }`}
-              >
-                My Experience
-              </h2>
+            <div className="flex items-center gap-2 text-purple-400 text-sm mb-2">
+              <CalendarDays size={16} />
+              <span>{item.year}</span>
             </div>
+            <h3 className={`text-lg font-semibold ${darkMode ? "text-white" : "text-black"}`}>
+              {item.title}
+            </h3>
+            <p className={`text-sm font-medium mt-1 ${darkMode ? "text-purple-300" : "text-purple-700"}`}>
+              {item.company}
+            </p>
+            <p className={`text-xs mt-2 leading-relaxed ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </motion.div>
 
-            <div className="space-y-5">
-              {experienceData.map((item, index) => (
-                <div
-                  key={index}
-                  className={`
-              min-h-42.5
-              flex flex-col justify-center
-              rounded-2xl p-5
-              border transition-all duration-300
-              hover:scale-[1.02]
-              shadow-lg
-              ${
-                darkMode
-                  ? "bg-[#14081f] border-purple-900/40 hover:border-purple-500"
-                  : "bg-white/80 border-gray-300 hover:border-purple-400"
-              }
-            `}
-                >
-                  <div className="flex items-center gap-2 text-purple-400 text-sm mb-2">
-                    <CalendarDays size={16} />
-                    <span>{item.year}</span>
-                  </div>
+    {/* Education Section */}
+    <motion.div
+      initial={{ opacity: 0, x: 40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: false }}
+    >
+      <div className="flex items-center gap-3 mb-8">
+        <GraduationCap className="text-purple-500 w-7 h-7" />
+        <h2 className={`text-3xl font-bold ${darkMode ? "text-white" : "text-black"}`}>
+          My Education
+        </h2>
+      </div>
 
-                  <h3
-                    className={`text-lg font-semibold ${
-                      darkMode ? "text-white" : "text-black"
-                    }`}
-                  >
-                    {item.title}
-                  </h3>
-
-                  <p
-                    className={`text-sm mt-1 ${
-                      darkMode ? "text-gray-400" : "text-gray-700"
-                    }`}
-                  >
-                    {item.company}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Education Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: false }}
+      <div className="space-y-5">
+        {educationData.map((item, index) => (
+          <div
+            key={index}
+            className={`min-h-[170px] flex flex-col justify-center rounded-2xl p-5 border transition-all duration-300 hover:scale-[1.02] shadow-lg ${
+              darkMode
+                ? "bg-[#14081f] border-purple-900/40 hover:border-purple-500"
+                : "bg-white/80 border-gray-300 hover:border-purple-400"
+            }`}
           >
-            <div className="flex items-center gap-3 mb-8">
-              <GraduationCap className="text-purple-500 w-7 h-7" />
-
-              {/* TEXT COLOR */}
-              <h2
-                className={`text-3xl font-bold ${
-                  darkMode ? "text-white" : "text-black"
-                }`}
-              >
-                My Education
-              </h2>
+            <div className="flex items-center gap-2 text-purple-400 text-sm mb-2">
+              <CalendarDays size={16} />
+              <span>{item.year}</span>
             </div>
+            <h3 className={`text-lg font-semibold ${darkMode ? "text-white" : "text-black"}`}>
+              {item.title}
+            </h3>
+            <p className={`text-sm font-medium mt-1 ${darkMode ? "text-purple-300" : "text-purple-700"}`}>
+              {item.company}
+            </p>
+            <p className={`text-xs mt-2 leading-relaxed ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </motion.div>
 
-            <div className="space-y-5">
-              {educationData.map((item, index) => (
-                <div
-                  key={index}
-                  className={`
-              min-h-[170px]
-              flex flex-col justify-center
-              rounded-2xl p-5
-              border transition-all duration-300
-              hover:scale-[1.02]
-              shadow-lg
-              ${
-                darkMode
-                  ? "bg-[#14081f] border-purple-900/40 hover:border-purple-500"
-                  : "bg-white/80 border-gray-300 hover:border-purple-400"
-              }
-            `}
-                >
-                  <div className="flex items-center gap-2 text-purple-400 text-sm mb-2">
-                    <CalendarDays size={16} />
-                    <span>{item.year}</span>
-                  </div>
-
-                  <h3
-                    className={`text-lg font-semibold ${
-                      darkMode ? "text-white" : "text-black"
-                    }`}
-                  >
-                    {item.title}
-                  </h3>
-
-                  <p
-                    className={`text-sm mt-1 ${
-                      darkMode ? "text-gray-400" : "text-gray-700"
-                    }`}
-                  >
-                    {item.company}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+  </div>
+</section>
 
       {/*contact us*/}
 
