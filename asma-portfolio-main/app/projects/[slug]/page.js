@@ -9,13 +9,76 @@ const projectDetails = {
     description: "Engaging social media posts, campaign creatives, and brand-consistent graphics designed for digital platforms.",
     designs: [
       {
-        image: "/images/my-photo.jpg",
-        caption: "Local Gallery Design 1",
+        image: "/images/1.png",
+        caption: "Docker CI/CD",
       },
       {
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-        caption: "Tech Brand Awareness Post",
+       image: "/images/2.png",
+        caption: "Docker CI/CD",
       },
+       {
+       image: "/images/3.png",
+        caption: "Engineering Thinking",
+      },
+       {
+       image: "/images/4.png",
+        caption: "Manual Testing VS Automation",
+      },
+       {
+       image: "/images/5.png",
+        caption: "SaaS",
+      },
+       {
+       image: "/images/6.png",
+        caption: "SaaS",
+      },
+       {
+       image: "/images/7.png",
+        caption: "Design Test Mitigate Risk",
+      },
+       {
+       image: "/images/8.png",
+        caption: "Business Risk",
+      },
+       {
+       image: "/images/9.png",
+        caption: "Playwright Trace Viewer",
+      },
+       {
+       image: "/images/14.png",
+        caption: "Eval Scores",
+      },
+        {
+        images: [
+          "/images/14.jpg",
+         
+          "/images/16.png",
+           "/images/15.png",
+        ],
+        caption: "LLM EVAL PIPELINE",
+      },
+       {
+        images: [
+          "/images/17.png",
+         
+          "/images/18.png",
+           "/images/19.png",
+            "/images/20.png",
+             "/images/21.png",
+        ],
+        caption: "PLAYWRIGHT . TEST AUTOMATION",
+      },
+      {
+        images: [
+          "/images/22.png",
+         
+          "/images/23.png",
+           "/images/15.png",
+            "/images/26.png",
+        ],
+        caption: "Why Test Keeps Breaking",
+      },
+     
     ],
   },
   "lancer-seed": {
