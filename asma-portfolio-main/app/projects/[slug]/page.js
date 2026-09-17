@@ -36,19 +36,23 @@ const projectDetails = {
     title: "Lancer Seed",
     description: "Marketing creatives, product graphics, and promotional visuals for agriculture-focused products.",
     designs: [
-      { image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4", caption: "Hybrid Crop Creative 1" },
-      { image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3", caption: "Hybrid Crop Creative 2" },
-      { image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085", caption: "Hybrid Crop Creative 3" },
-      { image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6", caption: "Hybrid Crop Creative 4" },
-      { image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1", caption: "Hybrid Crop Creative 5" },
-      {
-        images: [
-          "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
-          "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
-          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
-        ],
-        caption: "Campaign Carousel Set 6",
-      },
+        { image: "/images/27.png", caption: "LANCER SEED (LR1240/LR228)" },
+                { image: "/images/28.png", caption: "LANCER SEED (LR2808/LR6717)" },
+        { image: "/images/29.png", caption: "HYBRID SIALAGE" },
+        { image: "/images/30.png", caption: "HYBRID CORN SEED LR2025" },
+                { image: "/images/31.png", caption: "GERMINATION" },
+                  { image: "/images/32.png", caption: "LANCER SEED LR1240 | LR228" },
+                    { image: "/images/33.png", caption: "LANCER SEED LR1240" },
+                      { image: "/images/34.png", caption: "12 Rabi-ul-Awwal " },
+                      { image: "/images/35.png", caption: "LR1240 " },
+                      { image: "/images/36.png", caption: "HYBRID CORN SEED" },
+                       { image: "/images/37.png", caption: "HYBRID CORN SEED FLEX" },
+                        { image: "/images/38.png", caption: "HYBRID CORN SEED FLEX" },
+                         { image: "/images/39.png", caption: "HYBRID CORN SEED FLEX" },
+                          { image: "/images/40.png", caption: "HYBRID CORN SEED FLEX" },
+
+
+     
     ],
   },
   "eastern-high-school": {
