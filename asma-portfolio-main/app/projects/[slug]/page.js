@@ -50,6 +50,20 @@ const projectDetails = {
                         { image: "/images/38.png", caption: "HYBRID CORN SEED FLEX" },
                          { image: "/images/39.png", caption: "HYBRID CORN SEED FLEX" },
                           { image: "/images/40.png", caption: "HYBRID CORN SEED FLEX" },
+                           { image: "/images/41.png", caption: "AGRICULTURE FIELD" },
+                            { image: "/images/42.png", caption: "HYBRID CORN SEED LR1240" },
+                             { image: "/images/43.png", caption: "14 AUGUST" },
+                              { image: "/images/44.png", caption: "HYBRID CORN SEED LR228" },
+                              { image: "/images/45.png", caption: "LANCER SEED" },
+                              { image: "/images/46.png", caption: "HYBRID SIALAGE LR2025" },
+                              { image: "/images/47.png", caption: "HYBRID MUSTARD SEED" },
+                              { image: "/images/48.png", caption: "JUMMAH MUBARAK" },
+                              { image: "/images/49.png", caption: "HYBRID MUSTARD SEED" },
+                              { image: "/images/50.png", caption: "LANCER SEED" },
+                              { image: "/images/51.png", caption: "BAHARIA HYBRID CORN SEED LR6717" },
+                              { image: "/images/52.png", caption: "CERTIFIED CORN SEED" },
+                              { image: "/images/53.png", caption: "HYBRID MAIZE SEED LR2808" },
+                              { image: "/images/54.png", caption: "LANCER SEED KISAN KA ITMAD" },
 
 
      
