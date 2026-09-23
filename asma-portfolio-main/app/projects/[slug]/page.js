@@ -86,9 +86,32 @@ const projectDetails = {
       "Promotional graphics, admissions campaign carousels, and student engagement visual content.",
     designs: [
       {
-        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
-        caption: "Admissions Open Campaign Post",
+        image: "/images/80.png", caption: "NEED BEYOND TEXTBOOK" 
       },
+      {
+        images: [
+          "/images/81.png",
+          "/images/82.png",
+        ],
+        caption: "5 HABITS OF SUCCESSFULL STUDENTS",
+      },
+      { image: "/images/83.png", caption: "5 SIGNS YOU CHILD NEEDS" },
+      { image: "/images/84.png", caption: "READ EVERYDAY" },
+      { image: "/videos/85.mp4", caption: "5 SELF-AFFRIMIATIONS" },
+      { image: "/videos/86.mp4", caption: "3 WAYS TO IMPROVE YOUR CONFIDENCE" },
+      { image: "/images/87.png", caption: "12 RABI-UL-AWWAL" },
+      { image: "/images/88.png", caption: "KNOWLEDGE + CHARACTER" },
+      { image: "/images/89.png", caption: "3 THINGS ISLAM TEACHES" },
+      
+      {
+        images: [
+          "/images/90.png",
+          "/images/91.png",
+        ],
+        caption: "HOW TO STAY FOCUSED WHILE STUDYING",
+      },
+      { image: "/videos/92.mp4", caption: "PARENTING" },
+      { image: "/videos/93.mp4", caption: "JUMMAH MUBARAK" },
     ],
   },
   "fashion-bank": {
@@ -109,7 +132,7 @@ export default function ProjectGalleryPage() {
   const slug = params?.slug;
   const project = projectDetails[slug];
 
-  const [modalImage, setModalImage] = useState(null);
+  const [modalMedia, setModalMedia] = useState(null);
   const [cardIndices, setCardIndices] = useState({});
   const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -140,6 +163,8 @@ export default function ProjectGalleryPage() {
       return { ...prev, [cardIdx]: (current - 1 + len) % len };
     });
   };
+
+  const isVideo = (url) => url && url.endsWith(".mp4");
 
   return (
     <div
@@ -333,7 +358,7 @@ export default function ProjectGalleryPage() {
           {project.designs.map((item, idx) => {
             const isCarousel = item.images && item.images.length > 0;
             const currentSlide = cardIndices[idx] || 0;
-            const displayImage = isCarousel
+            const displayMedia = isCarousel
               ? item.images[currentSlide]
               : item.image;
 
@@ -344,13 +369,21 @@ export default function ProjectGalleryPage() {
               >
                 <div
                   className="overflow-hidden h-72 relative cursor-pointer group"
-                  onClick={() => setModalImage(displayImage)}
+                  onClick={() => setModalMedia(displayMedia)}
                 >
-                  <img
-                    src={displayImage}
-                    alt={item.caption}
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                  />
+                  {isVideo(displayMedia) ? (
+                    <video
+                      src={displayMedia}
+                      controls
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      src={displayMedia}
+                      alt={item.caption}
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                    />
+                  )}
 
                   {isCarousel && item.images.length > 1 && (
                     <>
@@ -393,23 +426,33 @@ export default function ProjectGalleryPage() {
         </div>
 
         {/* Fullscreen Modal Preview */}
-        {modalImage && (
+        {modalMedia && (
           <div
             className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-            onClick={() => setModalImage(null)}
+            onClick={() => setModalMedia(null)}
           >
             <div className="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
               <button
                 className="absolute top-4 right-4 text-white text-3xl font-bold bg-purple-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-700 z-50 cursor-pointer"
-                onClick={() => setModalImage(null)}
+                onClick={() => setModalMedia(null)}
               >
                 &times;
               </button>
-              <img
-                src={modalImage}
-                alt="Fullscreen preview"
-                className="max-h-[85vh] max-w-full object-contain rounded-lg border border-purple-500/50"
-              />
+              {isVideo(modalMedia) ? (
+                <video
+                  src={modalMedia}
+                  controls
+                  autoPlay
+                  className="max-h-[85vh] max-w-full object-contain rounded-lg border border-purple-500/50"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              ) : (
+                <img
+                  src={modalMedia}
+                  alt="Fullscreen preview"
+                  className="max-h-[85vh] max-w-full object-contain rounded-lg border border-purple-500/50"
+                />
+              )}
             </div>
           </div>
         )}
