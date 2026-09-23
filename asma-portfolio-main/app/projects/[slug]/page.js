@@ -44,7 +44,7 @@ const projectDetails = {
       },
     ],
   },
-  
+
   "lancer-seed": {
     title: "Lancer Seed",
     description:
@@ -86,13 +86,11 @@ const projectDetails = {
       "Promotional graphics, admissions campaign carousels, and student engagement visual content.",
     designs: [
       {
-        image: "/images/80.png", caption: "NEED BEYOND TEXTBOOK" 
+        image: "/images/80.png",
+        caption: "NEED BEYOND TEXTBOOK",
       },
       {
-        images: [
-          "/images/81.png",
-          "/images/82.png",
-        ],
+        images: ["/images/81.png", "/images/82.png"],
         caption: "5 HABITS OF SUCCESSFULL STUDENTS",
       },
       { image: "/images/83.png", caption: "5 SIGNS YOU CHILD NEEDS" },
@@ -102,16 +100,40 @@ const projectDetails = {
       { image: "/images/87.png", caption: "12 RABI-UL-AWWAL" },
       { image: "/images/88.png", caption: "KNOWLEDGE + CHARACTER" },
       { image: "/images/89.png", caption: "3 THINGS ISLAM TEACHES" },
-      
+
       {
-        images: [
-          "/images/90.png",
-          "/images/91.png",
-        ],
+        images: ["/images/90.png", "/images/91.png"],
         caption: "HOW TO STAY FOCUSED WHILE STUDYING",
       },
       { image: "/videos/92.mp4", caption: "PARENTING" },
       { image: "/videos/93.mp4", caption: "JUMMAH MUBARAK" },
+      { image: "/images/94.png", caption: "DAILY STUDY ROUTINE" },
+      { image: "/images/95.png", caption: "HOW PARENT CAN HELP" },
+      {
+        image: "/images/96.png",
+        caption: "IMPORTANCE OF SEEKING KNOWLEDGE IN ISLAM",
+      },
+      { image: "/images/97.png", caption: "HOW TO IMPROVE HANDWRITTING" },
+      { image: "/images/98.png", caption: "ENGLISH MISTAKES" },
+      { image: "/images/99.png", caption: "20 MINUTES DAILY CHALLENGE" },
+      { image: "/videos/100.mp4", caption: "PARENTING" },
+      { image: "/images/101.png", caption: "ISLAMIC QUOTE" },
+      { image: "/images/102.png", caption: "GOOD MANNERS" },
+      { image: "/images/103.png", caption: "JUMMAH MUBARAK" },
+      { image: "/images/104.png", caption: "DREAM BIG STUDY SMART" },
+      {
+        images: ["/images/105.png", "/images/106.png", "/images/107.png"],
+        caption: "SUMMER VACATIONS",
+      },
+      { image: "/images/108.png", caption: "DAILY HABIT" },
+      { image: "/images/109.png", caption: "THE POWER OF TRUTHFULNESS" },
+      { image: "/images/110.png", caption: "CARING FOR PARENTS" },
+      { image: "/images/111.png", caption: "10th MUHARRAM" },
+      { image: "/images/112.png", caption: "JUMMAH MUBARAK" },
+
+      { image: "/images/113.png", caption: "BRAIN GYM FOR KIDS" },
+      { image: "/images/114.png", caption: "NEW TERMS NEW GOALS" },
+      { image: "/images/115.png", caption: "ISLAMIC QUOTE" },
     ],
   },
   "fashion-bank": {
