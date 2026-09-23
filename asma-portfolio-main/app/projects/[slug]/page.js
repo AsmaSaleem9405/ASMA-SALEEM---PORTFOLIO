@@ -141,9 +141,22 @@ const projectDetails = {
     description:
       "Customized uniform collections, promotional graphics, and commercial apparel marketing assets.",
     designs: [
-      {
-        image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
-        caption: "Custom Uniform Collection Showcase",
+       {
+        images: ["/images/116.png", "/images/117.png", "/images/118.png", "/images/119.png"],
+        caption: "ONE TEAM ONE STANDARD",
+      },
+       { image: "/images/120.png", caption: "MUSICIAN UNIFORM" },
+        {
+        images: ["/images/121.png", "/images/122.png", "/images/123.png", "/images/124.png"],
+        caption: "ONE TEAM ONE STANDARD",
+      },
+       {
+        images: ["/images/125.png", "/images/126.png", "/images/127.png", "/images/128.png"],
+        caption: "CHEFF UNIFORM",
+      },
+       {
+        images: ["/images/129.png", "/images/130.png", "/images/131.png", "/images/132.png"],
+        caption: "ONE TEAM ONE STANDARD",
       },
     ],
   },
