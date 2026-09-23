@@ -134,6 +134,7 @@ const projectDetails = {
       { image: "/images/113.png", caption: "BRAIN GYM FOR KIDS" },
       { image: "/images/114.png", caption: "NEW TERMS NEW GOALS" },
       { image: "/images/115.png", caption: "ISLAMIC QUOTE" },
+       { image: "/images/133.png", caption: "SCHOOL PROMOTION" },
     ],
   },
   "fashion-bank": {
@@ -156,8 +157,29 @@ const projectDetails = {
       },
        {
         images: ["/images/129.png", "/images/130.png", "/images/131.png", "/images/132.png"],
-        caption: "ONE TEAM ONE STANDARD",
+        caption: "SAM'S RESTURANT WAITER UNIFORM",
       },
+      {
+        images: ["/images/134.png", "/images/135.png", "/images/137.png", "/images/138.png"],
+        caption: "FABRIC CHOICE",
+      },
+             { image: "/images/139.png", caption: "ORDER DELIVERED" },
+              { image: "/images/141.png", caption: "SPORTS WEAR" },
+               { image: "/images/140.png", caption: "HOUSEKEEPING UNIFORM" },
+                { image: "/images/142.png", caption: "DRIVER UNIFORM" },
+                 { image: "/images/143.png", caption: "MANAGER UNIFORM" },
+                  { image: "/images/144.png", caption: "CASHIER UNIFORM" },
+                   { image: "/images/145.png", caption: "PHARMACY UNIFORM" },
+                    { image: "/images/146.png", caption: "HOTEL CLEANER UNIFORM" },
+                     { image: "/images/147.png", caption: "RECEPTIONIST UNIFORM" },
+                      { image: "/images/148.png", caption: "CHEFF UNIFORM" },
+                       { image: "/images/150.png", caption: "HOUSEKEEPING UNIFORM" },
+                        { image: "/images/151.png", caption: "BARTENDER UNIFORM" },
+                         { image: "/images/152.png", caption: "SHALWAR QAMEEZ" },
+                          { image: "/images/153.png", caption: "MEDICAL SCRUB SUIT" },
+                           { image: "/images/154.png", caption: "HOUSEKEEPING UNIFORM" },
+                            { image: "/images/155.png", caption: "SWEEOER UNIFORM" },
+
     ],
   },
 };
