@@ -137,8 +137,8 @@ const projectDetails = {
       { image: "/images/115.png", caption: "ISLAMIC QUOTE" },
        { image: "/images/133.png", caption: "SCHOOL PROMOTION" },
            { image: "/images/161.png", caption: "ISLAMIC VALUES" },
-                 { image: "/images/94.png", caption: "DAILY STUDY ROUTINE" },
-      { image: "/images/95.png", caption: "HOW PARENT CAN HELP" },
+                 { image: "/images/165.png", caption: "DAILY STUDY ROUTINE" },
+      { image: "/images/166.png", caption: "HOW PARENT CAN HELP" },
     ],
   },
   "fashion-bank": {
