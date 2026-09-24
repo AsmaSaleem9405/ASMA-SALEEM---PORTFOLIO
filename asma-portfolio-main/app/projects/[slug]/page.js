@@ -42,6 +42,7 @@ const projectDetails = {
         ],
         caption: "Why Test Keeps Breaking",
       },
+        { image: "/images/162.png", caption: "CI/CD PIPELINE" },
     ],
   },
 
@@ -135,6 +136,7 @@ const projectDetails = {
       { image: "/images/114.png", caption: "NEW TERMS NEW GOALS" },
       { image: "/images/115.png", caption: "ISLAMIC QUOTE" },
        { image: "/images/133.png", caption: "SCHOOL PROMOTION" },
+           { image: "/images/161.png", caption: "ISLAMIC VALUES" },
     ],
   },
   "fashion-bank": {
@@ -179,6 +181,10 @@ const projectDetails = {
                           { image: "/images/153.png", caption: "MEDICAL SCRUB SUIT" },
                            { image: "/images/154.png", caption: "HOUSEKEEPING UNIFORM" },
                             { image: "/images/155.png", caption: "SWEEOER UNIFORM" },
+                             {
+        images: ["/images/160.png", "/images/157.png", "/images/158.png", "/images/159.png"],
+        caption: "Cheaper Uniform",
+      },
 
     ],
   },
