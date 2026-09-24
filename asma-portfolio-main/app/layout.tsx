@@ -13,12 +13,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
- title: "Asma - Portfolio",
+  title: "Asma Saleem | Graphic Designer",
   description:
-    "Your Personal AI Assistant that brings everything together. From syncing both your personal and work schedule to organising documents, messages, and reminders - it keeps your life in one smart, unified hub.",
+    "Asma Saleem is a graphic designer specializing in social media designs, branding, marketing creatives, and visually engaging digital content.",
+
+  keywords: [
+    "Asma Saleem",
+    "Graphic Designer",
+    "Graphic Design Portfolio",
+    "Social Media Designer",
+    "Branding Designer",
+    "Marketing Designer",
+    "Pakistan Graphic Designer",
+  ],
+
+  authors: [{ name: "Asma Saleem" }],
+
+  creator: "Asma Saleem",
 
   icons: {
-    icon: "/favicon.png", // or "/favicon.png"
+    icon: "/favicon.png",
+  },
+
+  openGraph: {
+    title: "Asma Saleem | Graphic Designer",
+    description:
+      "Explore the graphic design portfolio of Asma Saleem, featuring social media designs, branding, marketing creatives, and digital visuals.",
+    type: "website",
+    siteName: "Asma Saleem Portfolio",
   },
 };
 
