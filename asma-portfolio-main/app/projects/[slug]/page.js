@@ -9,16 +9,17 @@ const projectDetails = {
     description:
       "Engaging social media posts, campaign creatives, and brand-consistent graphics designed for digital platforms.",
     designs: [
-      { image: "/images/1.png", caption: "Docker CI/CD" },
-      { image: "/images/2.png", caption: "Docker CI/CD" },
-      { image: "/images/3.png", caption: "Engineering Thinking" },
-      { image: "/images/4.png", caption: "Manual Testing VS Automation" },
-      { image: "/images/5.png", caption: "SaaS" },
-      { image: "/images/6.png", caption: "SaaS" },
-      { image: "/images/7.png", caption: "Design Test Mitigate Risk" },
-      { image: "/images/8.png", caption: "Business Risk" },
-      { image: "/images/9.png", caption: "Playwright Trace Viewer" },
-      { image: "/images/14.png", caption: "Eval Scores" },
+      { image: "/images/1.png", caption: "DOCKER CI/CD" },
+      { image: "/images/2.png", caption: "DOCKER CI/CD" },
+      { image: "/images/3.png", caption: "ENGINEERING THINKING" },
+      { image: "/images/4.png", caption: "MANUAL TESTING VS AUTOMATION" },
+      { image: "/images/5.png", caption: "SAAS" },
+      { image: "/images/6.png", caption: "SAAS" },
+      { image: "/images/7.png", caption: "DESIGN TEST MITIGATE RISK" },
+      { image: "/images/8.png", caption: "BUSINESS RISK" },
+      { image: "/images/9.png", caption: "PLAYWRIGHT TRACE VIEWER" },
+      { image: "/images/14.png", caption: "EVAL SCORES" },
+        { image: "/images/167.png", caption: "EVZONETECH" },
       {
         images: ["/images/14.jpg", "/images/16.png", "/images/15.png"],
         caption: "LLM EVAL PIPELINE",
@@ -40,7 +41,7 @@ const projectDetails = {
           "/images/15.png",
           "/images/26.png",
         ],
-        caption: "Why Test Keeps Breaking",
+        caption: "WHY TEST KEEP BREAKING",
       },
         { image: "/images/162.png", caption: "CI/CD PIPELINE" },
     ],
@@ -79,6 +80,7 @@ const projectDetails = {
       { image: "/images/52.png", caption: "CERTIFIED CORN SEED" },
       { image: "/images/53.png", caption: "HYBRID MAIZE SEED LR2808" },
       { image: "/images/54.png", caption: "LANCER SEED KISAN KA ITMAD" },
+        { image: "/images/168.png", caption: "JUMMAH MUBARAK" },
     ],
   },
   "eastern-high-school": {
@@ -139,6 +141,7 @@ const projectDetails = {
            { image: "/images/161.png", caption: "ISLAMIC VALUES" },
                  { image: "/videos/165.mp4", caption: "DAILY STUDY ROUTINE" },
       { image: "/videos/166.mp4", caption: "HOW PARENT CAN HELP" },
+           { image: "/images/169.png", caption: "BEST OF LUCK" },
     ],
   },
   "fashion-bank": {
@@ -187,6 +190,7 @@ const projectDetails = {
         images: ["/images/160.png", "/images/157.png", "/images/158.png", "/images/159.png"],
         caption: "Cheaper Uniform",
       },
+   
 
     ],
   },
